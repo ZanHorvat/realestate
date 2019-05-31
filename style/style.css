@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+}
+
+.mboard{
+    background-color: turquoise;
+}
+
+.monlyrow{
+    background-color: azure;
+}
+
+.mleftsection{
+    background-color: bisque;
+    height: 100vh;
+
+}
+
+.mrightsection{
+    background-color: red;
+}
+
