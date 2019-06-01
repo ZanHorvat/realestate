@@ -108,3 +108,7 @@ video {
 .slick-track{
     width: 100%;
 }
+
+.rolling-element {
+    margin: 5px;
+}
