@@ -1,22 +1,110 @@
+html {
+    width: 100vw;
+}
+
 body {
     padding: 0;
+
+    width: 100vw;
+    
+
+}
+
+.row {
+    height: 100vh;
 }
 
 .mboard{
-    background-color: turquoise;
+    background-color: #85a6bf;
+}
+
+.firstrow{
+    background-image: url("../images/alternative.png");
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 105vh;
+    filter: blur(8px);
+
+}
+video {
+    object-fit: fill;
+    position: fixed;
+  min-width: 100%; 
+  }
+
+.mnavbar{
+    background-color: rgba(255, 255, 255, 0.0);
+    width: 100vw;
+}
+
+.secondrow{
+    background-color: #85a6bf;
+    height: 200vh;
+    filter: blur(4px);
 }
 
 .monlyrow{
-    background-color: azure;
+    background-image: url("../images/abovetheclounds.jpg");
 }
 
 .mleftsection{
-    background-color: bisque;
+    background-image: url("../images/hallway1.jpg");
     height: 100vh;
 
+    overflow: auto;
 }
 
 .mrightsection{
     background-color: red;
 }
 
+/* Transperent scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+.panel {
+    height: 100%;
+    width: 100%;
+}
+.panel.green {
+    margin-bottom: 400px
+}
+
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .mhead{
+      background-color: blanchedalmond;
+  }
+
+.navbar svg {
+      width: 10em;
+}
+
+.your-class {
+   width:100%;
+   margin-top: 50vh;
+
+}
+
+.slick-list {
+    margin-top: 30vh;
+    padding: 0px 50px;
+    bottom: 0rem !important;
+    opacity: 0.6 !important;
+}
+
+.slick-track{
+    width: 100%;
+}
