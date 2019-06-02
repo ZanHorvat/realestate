@@ -1,44 +1,87 @@
-<html>
-  <head>
-    <title>My Now Amazing Webpage</title>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-  </head>
-  <body>
-    <div class="autoplay">
-      <div style="background-color:aquamarine">your content1</div>
-      <div>your content2</div>
-      <div>your content3</div>
-      <div>your content4</div>
-      <div>your content5</div>
-      <div>your content6</div>
-      <div>your content7</div>
-      <div>your content8</div>
-      <div>your content9</div>
-      <div>your content0</div>
-      <div>your content'</div>
-      <div>your content3</div>
-    </div>
 
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=500" />
+	<meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, anchor, link, in-page, navigation, hash" />
+	<meta name="author"	content="Jan Paepke (www.janpaepke.de)" />
+	<title>Section Wipes (manual) - Examples - ScrollMagic</title>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $(".autoplay").slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2000
-        });
-      });
-    </script>
-  </body>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="scrollmagic/assets/css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="scrollmagic/assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="scrollmagic/assets/css/examples.css" type="text/css">
+	<link rel="shortcut icon" href="scrollmagic/assets/img/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="scrollmagic/assets/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/assets/js/lib/highlight.pack.js"></script>
+	<script type="text/javascript" src="scrollmagic/assets/js/lib/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/assets/js/examples.js"></script>
+	
+	<script type="text/javascript" src="scrollmagic/assets/js/lib/greensock/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+</head>
+<body>
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section class="demo" id="section-wipes">
+					<style type="text/css">
+						#pinContainer {
+							width: 100%;
+							height: 100%;
+							overflow: hidden;
+						}
+						.panel {
+							height: 100%;
+							width: 100%;
+							position: absolute;
+						}
+					</style>
+					<div id="pinContainer">
+						<section class="panel c1">
+							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id accusantium similique quasi suscipit fuga tempore numquam. Reiciendis quos sed quia, ea fugiat magni asperiores delectus error aliquam esse unde, voluptatem atque provident magnam est, porro numquam rem sapiente. Autem qui eligendi esse modi expedita obcaecati eaque illo harum eum optio.</b>
+						</section>
+						<section class="panel c2">
+							<b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit in nesciunt assumenda quidem expedita, tempora optio iusto. A doloribus ipsum voluptas maiores eos cupiditate necessitatibus officiis sunt neque totam! Perspiciatis ea fugit praesentium! Aperiam dicta praesentium temporibus repellendus repellat aspernatur vel dignissimos necessitatibus fugiat sequi provident consequuntur unde, quo explicabo.</b>
+						</section>
+						<section class="panel c3">
+							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit velit sed asperiores. Perferendis ipsa, iusto aperiam consequatur inventore ullam dignissimos reprehenderit est dolores, magni, unde impedit maxime modi ipsum dolorum doloremque explicabo sapiente distinctio officia laudantium fugit? Esse modi iure quas nihil ea nostrum mollitia quasi itaque debitis? Magnam!</b>
+						</section>
+						<section class="panel c4">
+							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, reiciendis ipsam dolor inventore ex at voluptatum odit, blanditiis sequi iure culpa amet natus quas soluta minima excepturi nobis distinctio, consequuntur labore optio harum fugiat! Doloribus inventore ducimus recusandae molestiae rerum totam incidunt magni consequatur corporis dicta. Expedita officia est dignissimos!</b>
+						</section>
+					</div>
+					<script>
+						$(function () { // wait for document ready
+							// init
+							var controller = new ScrollMagic.Controller();
+
+							// define movement of panels
+							var wipeAnimation = new TimelineMax()
+								.fromTo("section.panel.c1", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+								.fromTo("section.panel.c2",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+								.fromTo("section.panel.c3", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
+
+							// create scene to pin and link animation
+							new ScrollMagic.Scene({
+									triggerElement: "#pinContainer",
+									triggerHook: "onLeave",
+									duration: "300%"
+								})
+								.setPin("#pinContainer")
+								.setTween(wipeAnimation)
+								.addTo(controller);
+						});
+					</script>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../assets/js/tracking.js"></script>
+</body>
 </html>
