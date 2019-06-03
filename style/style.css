@@ -130,3 +130,7 @@ video {
     width: 105vw;
     height: 20rem;
 }
+
+.mModal {
+    background-color: rgba(200,200,200,0.7) !important;
+}
