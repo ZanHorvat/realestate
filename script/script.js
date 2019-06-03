@@ -37,6 +37,9 @@ $(document).ready(function() {
     animatedIn: "bounceInUp",
     animatedOut: "bounceOutDown",
     animationDuration: 3,
+    afterClose: function() {
+        $(".thumb").hide();
+      }
   });
 
   $(".your-class").slick({

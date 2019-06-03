@@ -1,5 +1,8 @@
 html {
     width: 100vw;
+    overflow: hidden;
+    max-height: 100vh;
+    background-color: black;
 }
 
 body {
@@ -8,6 +11,8 @@ body {
     width: 100vw;
     
     overflow: hidden;
+    max-height: 100vh;
+    background-color: black;
 }
 
 .row {
