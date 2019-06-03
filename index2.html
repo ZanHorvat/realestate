@@ -1,87 +1,67 @@
-
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-	<meta charset="utf-8"> 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=500" />
-	<meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, anchor, link, in-page, navigation, hash" />
-	<meta name="author"	content="Jan Paepke (www.janpaepke.de)" />
-	<title>Section Wipes (manual) - Examples - ScrollMagic</title>
-
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="scrollmagic/assets/css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="scrollmagic/assets/css/style.css" type="text/css">
-	<link rel="stylesheet" href="scrollmagic/assets/css/examples.css" type="text/css">
-	<link rel="shortcut icon" href="scrollmagic/assets/img/favicon.ico" type="image/x-icon">
-
-	<script type="text/javascript" src="scrollmagic/assets/js/lib/jquery.min.js"></script>
-	<script type="text/javascript" src="scrollmagic/assets/js/lib/highlight.pack.js"></script>
-	<script type="text/javascript" src="scrollmagic/assets/js/lib/modernizr.custom.min.js"></script>
-	<script type="text/javascript" src="scrollmagic/assets/js/examples.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<script>
+			function pageScroll() {
+				window.scrollBy(0, 1);
+				scrolldelay = setTimeout(pageScroll, 30);
+			}
+			pageScroll();
+	</script>
 	
-	<script type="text/javascript" src="scrollmagic/assets/js/lib/greensock/TweenMax.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-	<script type="text/javascript" src="scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 </head>
-<body>
-	<div id="content-wrapper">
-		<div id="example-wrapper">
-			<div class="scrollContent">
-				<section class="demo" id="section-wipes">
-					<style type="text/css">
-						#pinContainer {
-							width: 100%;
-							height: 100%;
-							overflow: hidden;
-						}
-						.panel {
-							height: 100%;
-							width: 100%;
-							position: absolute;
-						}
-					</style>
-					<div id="pinContainer">
-						<section class="panel c1">
-							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id accusantium similique quasi suscipit fuga tempore numquam. Reiciendis quos sed quia, ea fugiat magni asperiores delectus error aliquam esse unde, voluptatem atque provident magnam est, porro numquam rem sapiente. Autem qui eligendi esse modi expedita obcaecati eaque illo harum eum optio.</b>
-						</section>
-						<section class="panel c2">
-							<b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit in nesciunt assumenda quidem expedita, tempora optio iusto. A doloribus ipsum voluptas maiores eos cupiditate necessitatibus officiis sunt neque totam! Perspiciatis ea fugit praesentium! Aperiam dicta praesentium temporibus repellendus repellat aspernatur vel dignissimos necessitatibus fugiat sequi provident consequuntur unde, quo explicabo.</b>
-						</section>
-						<section class="panel c3">
-							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit velit sed asperiores. Perferendis ipsa, iusto aperiam consequatur inventore ullam dignissimos reprehenderit est dolores, magni, unde impedit maxime modi ipsum dolorum doloremque explicabo sapiente distinctio officia laudantium fugit? Esse modi iure quas nihil ea nostrum mollitia quasi itaque debitis? Magnam!</b>
-						</section>
-						<section class="panel c4">
-							<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, reiciendis ipsam dolor inventore ex at voluptatum odit, blanditiis sequi iure culpa amet natus quas soluta minima excepturi nobis distinctio, consequuntur labore optio harum fugiat! Doloribus inventore ducimus recusandae molestiae rerum totam incidunt magni consequatur corporis dicta. Expedita officia est dignissimos!</b>
-						</section>
-					</div>
-					<script>
-						$(function () { // wait for document ready
-							// init
-							var controller = new ScrollMagic.Controller();
-
-							// define movement of panels
-							var wipeAnimation = new TimelineMax()
-								.fromTo("section.panel.c1", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
-								.fromTo("section.panel.c2",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
-								.fromTo("section.panel.c3", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
-
-							// create scene to pin and link animation
-							new ScrollMagic.Scene({
-									triggerElement: "#pinContainer",
-									triggerHook: "onLeave",
-									duration: "300%"
-								})
-								.setPin("#pinContainer")
-								.setTween(wipeAnimation)
-								.addTo(controller);
-						});
-					</script>
-				</section>
-			</div>
+<body style="color:rgba(255,255,255,0.6); text-align: center; font-family: 'Open Sans', sans-serif; margin: 3rem; margin-right: 5rem;>
+		<div style="height: 2rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum illum pariatur distinctio, at error eos et minima debitis repellendus deserunt dolores magni? Ex eaque dolorum iste cupiditate ab consectetur magnam nisi, incidunt eius nobis necessitatibus nihil quasi, quas praesentium, et itaque minus dicta totam reiciendis possimus. Itaque quam nesciunt eveniet!</p>	
 		</div>
-	</div>
-	<script type="text/javascript" src="../../assets/js/tracking.js"></script>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis quaerat nisi delectus quod quibusdam similique, accusantium, dolores ipsa voluptatem veniam distinctio. Facilis hic eveniet a unde voluptatem aliquam dolores eligendi. Fuga non corporis magnam eveniet vel odio, enim sapiente eius recusandae praesentium illum molestias, repellendus quidem. Officia optio totam dolor.</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam tempora eos sequi exercitationem ad totam excepturi rem asperiores in iste deserunt non minus temporibus reiciendis dicta dignissimos nihil, dolor nisi vero aliquid! Sed animi quidem reprehenderit pariatur, placeat esse? Quasi placeat ducimus impedit vel aliquid. Voluptatum repellat nobis explicabo corporis?</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem iste ipsum, facilis voluptate aut perferendis delectus, vel, facere placeat libero pariatur natus ab sapiente earum nostrum recusandae! Tenetur illum repellendus, minus dolor autem est, quae quos nulla quis inventore dolorem repudiandae expedita, accusantium exercitationem vero quam harum voluptatem adipisci maxime!</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque vero tempore, tenetur nihil assumenda dolore rerum culpa magnam minus! Voluptas itaque officia saepe eum eius excepturi incidunt mollitia, iusto ad nobis autem totam qui, nulla culpa exercitationem ab maxime quaerat optio nisi quia? Laudantium ea iure blanditiis fugit, omnis inventore?</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, quaerat. Quibusdam, doloremque aut fugit vitae sit soluta aliquid eveniet natus necessitatibus mollitia velit tenetur eos? Explicabo quae modi corrupti sequi cum molestiae assumenda omnis delectus ratione dolor, magni aliquam laborum enim sit ad culpa expedita tenetur nulla. Libero, enim ab.</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Hey</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Hey</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Hey</p>	
+		</div>
+		<div style="height: 20rem;"></div>
+		<div style="height: 10rem;" data-aos="fade-up" data-aos-anchor-placement="center-center">
+			<p>Hey</p>	
+		</div>
+
+
+										<script>
+												AOS.init();
+											</script>
 </body>
 </html>

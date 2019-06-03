@@ -112,3 +112,21 @@ video {
 .rolling-element {
     margin: 5px;
 }
+
+.okvir {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 40vh;
+    z-index: 600;
+    margin: auto;
+    width: 100%;
+}
+
+.iframed{
+    margin: auto;
+    width: 105vw;
+    height: 20rem;
+}
