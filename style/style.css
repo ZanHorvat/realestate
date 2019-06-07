@@ -15,8 +15,8 @@ body {
     background-color: black;
 }
 
-.row {
-    
+.fa-times:hover{
+    cursor: pointer;
 }
 
 .mboard{
